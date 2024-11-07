@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wordle RO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Wordle RO</h1>
+      <span id="cuvinteGhicite">Guessed Words: 0</span>
+      <button class="icon">⚙️</button>
+    </header>
+
+    <main>
+      <div class="grid">
+        <div class="row">
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class="row">
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class="row">
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class="row">
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class="row">
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class="row">
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+      </div>
+
+      <div class="keyboard">
+        <div class="row">
+            <button class="key" data-key="Q">Q</button>
+            <button class="key" data-key="W">W</button>
+            <button class="key" data-key="E">E</button>
+            <button class="key" data-key="R">R</button>
+            <button class="key" data-key="T">T</button>
+            <button class="key" data-key="Y">Y</button>
+            <button class="key" data-key="U">U</button>
+            <button class="key" data-key="I">I</button>
+            <button class="key" data-key="O">O</button>
+            <button class="key" data-key="P">P</button>
+        </div>
+        <div class="row">
+            <button class="key" data-key="A">A</button>
+            <button class="key" data-key="S">S</button>
+            <button class="key" data-key="D">D</button>
+            <button class="key" data-key="F">F</button>
+            <button class="key" data-key="G">G</button>
+            <button class="key" data-key="H">H</button>
+            <button class="key" data-key="J">J</button>
+            <button class="key" data-key="K">K</button>
+            <button class="key" data-key="L">L</button>
+        </div>
+        <div class="row">
+            <button class="key enter" data-key="ENTER">ENTER</button>
+            <button class="key" data-key="Z">Z</button>
+            <button class="key" data-key="X">X</button>
+            <button class="key" data-key="C">C</button>
+            <button class="key" data-key="V">V</button>
+            <button class="key" data-key="B">B</button>
+            <button class="key" data-key="N">N</button>
+            <button class="key" data-key="M">M</button>
+            <button class="key backspace" data-key="BACKSPACE">⌫</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="popup" id="endGamePopup">
+    <div class="popup-content">
+        <p id="endGameMessage"></p>
+        <button onclick="restartGame()">Play Again</button>
+    </div>
+</div>
+<div class="notification" id="notification"></div>
+<div id="instructionsModal" class="modal">
+  <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2>Cum se joacă</h2>
+      <p>Ghicește cuvântul din 6 încercări. După fiecare încercare, culoarea literelor se schimbă și îți arată cât de aproape ai fost de a ghici cuvântul:</p>
+      <div class="examples">
+          <div class="example">
+              <span class="tile correct">C</span>
+              <span class="tile">O</span>
+              <span class="tile">P</span>
+              <span class="tile">I</span>
+              <span class="tile">L</span>
+              <p>Litera C există în cuvânt și e în locul corect.</p>
+          </div>
+          <div class="example">
+              <span class="tile">G</span>
+              <span class="tile">U</span>
+              <span class="tile present">L</span>
+              <span class="tile">E</span>
+              <span class="tile">R</span>
+              <p>Litera L e în cuvânt, dar nu e în locul corect.</p>
+          </div>
+          <div class="example">
+              <span class="tile">H</span>
+              <span class="tile">A</span>
+              <span class="tile">I</span>
+              <span class="tile absent">N</span>
+              <span class="tile">E</span>
+              <p>Litera N nu e deloc în cuvânt.</p>
+          </div>
+      </div>
+      <p>Cosmin Marian</p>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+</div>
+</body>
+</html>
